@@ -1,9 +1,84 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
     <title>calvin-pizza</title>
     <link href="css/styles.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 </head>
+<body>
+    <nav>
+        <label class="logo">Pizzeria</label>
+        <ul>
+            <li><a class="active" href="index.html">Home</a></li>
+            <li><a href="form.html">Order</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+
+    <div class="checkout-form">
+        <form action="action_page.php">
+            <label for="First name">Your First Name</label>
+            <input type="text" name="First name" placeholder="Your first name">
+            <label for="Last name">Your Last Name</label>
+            <input type="text" name="Last name" placeholder="Your Last name">
+            <label for="Email">Your Email</label>
+            <input type="text" name="email" placeholder="Your email address">
+            <label for="City">Your city</label>
+            <input type="text" name="county" placeholder="Your county of residence">
+            <label for="Pizza type">Type of Pizza</label> 
+            <select name="Type of pizza" id="Pizza type">
+                 <option value="Type of pizza">select pizza</option>
+                 <option value="250">Margherita-small</option>
+                 <option value="500">Margherita-medium</option>
+                 <option value="1000">Margherita-large</option>
+                 <option value="250">Pepperoni-small</option>
+                 <option value="500">Pepperoni-medium</option>
+                 <option value="1000">Pepperoni-large</option>
+                 <option value="250">Bbqchicken-small</option>
+                 <option value="500">Bbqchicken-medium</option>
+                 <option value="1000">Bbqchicken-large</option>
+                 <option value="250">Hawaiian-small</option>
+                 <option value="500">Hawaiian-medium</option>
+                 <option value="1000">Hawaiian-large</option>
+                 <option value="250">meatlovers-small</option>
+                 <option value="500">meatlovers-medium</option>
+                 <option value="1000">meatlovers-large</option>
+
+            </select>
+            <label for="Quantity">Quantity</label>
+            <input type="number" name="Quantity" min="1" placeholder="Quantity" onchange="calculateAmount(this.value)"required>
+            <label for="Extra toppings">Extra toppings</label>
+            <select name="Extra toppings" id="Extra toppings">
+                 <option value="None">None</option>
+                 <option value="cheese">cheese</option>
+                 <option value="onions">onions</option>
+                 <option value="Tomatoes">Tomatoes</option>
+                 <option value="Marinara sauce">Marinara sauce</option>
+                 <option value="fresh garlic">fresh garlic</option>
+                 <option value="sausage">sausage</option>
+                 <option value="black olives">black olives</option>
+                 <option value="green pepper">green pepper</option>
+                 <option value="fresh basil">fresh basil</option>
+                 <option value="bacon">bacon</option>
+                 <option value="mushrooms">mushrooms</option>
+                 <option value="cabanossi">cabanossi</option>
+                 <option value="capsicum">capsicum</option>
+            </select>
+            <label for="price">price</label>
+            <input type="number" name="price" readonly onchange="calculateAmount(this.value)"required>
+            <label for="Total cost">Total cost</label>
+            <input class="Total" name="Total" id="tot" type="text" readonly>
+
+            
+
+        </form>
+    </div>
+    
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
+    <script src="js/script.js"></script>
+</body>
 </html>
 
